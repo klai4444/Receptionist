@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, TextInput, ScrollView, TouchableOpacity, StyleSheet, ViewStyle, TextStyle } from "react-native";
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import ChatBox from './ChatBox';
-
+import Location from './Location';
 const firebaseConfig = {
   apiKey: "AIzaSyBZm0-XzyYroEK6trkCQLo5rvsWKNLuvRU",
   authDomain: "receptionist-338.firebaseapp.com",
@@ -26,6 +26,15 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 const Receptionist: React.FC = () => {
+  // State to hold location error message
+  const [error, setError] = useState<string | null>(null);
+  const handleLocationFetched = (lat: number | null, lng: number | null) => {
+    console.log(`User Location: Latitude: ${lat}, Longitude: ${lng}`);
+  };
+  const handleError = (error: string) => {
+    setError(error); // Set the error message
+    console.log(error); // Log the error to the console
+  };
   return (
     <View style={styles.container}>
       <View style={styles.titleContainer}>
@@ -34,6 +43,7 @@ const Receptionist: React.FC = () => {
       </View>
       <View style={styles.mainContent}>
         <ChatBox />
+        <Location onLocationFetched={handleLocationFetched} onError={handleError} />
       </View>
     </View>
   );
