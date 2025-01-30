@@ -1,8 +1,8 @@
 import React from 'react';
-import { Text, View, StyleSheet } from "react-native";
-import { Text, View } from "react-native";
+import { View, Text, StyleSheet, ViewStyle, TextStyle } from "react-native";
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import ChatBox from './ChatBox';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBZm0-XzyYroEK6trkCQLo5rvsWKNLuvRU",
@@ -14,31 +14,53 @@ const firebaseConfig = {
   measurementId: "G-2D1M7M75FX"
 };
 
+interface Styles {
+  container: ViewStyle;
+  titleContainer: ViewStyle;
+  title: TextStyle;
+  body: TextStyle;
+  mainContent: ViewStyle;
+}
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-export default function Index() {
+const Receptionist: React.FC = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Receptionist</Text>
-      <Text style={styles.body}>Virtual receptionist, anytime, anywhere, anyone.</Text>
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>Receptionist</Text>
+        <Text style={styles.body}>Virtual receptionist, anytime, anywhere, anyone.</Text>
+      </View>
+      <View style={styles.mainContent}>
+        <ChatBox />
+      </View>
     </View>
   );
-}
+};
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create<Styles>({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    backgroundColor: '#fff',
+  },
+  titleContainer: {
+    padding: 20,
     alignItems: 'center',
+    borderBottomWidth: 1,
+    borderBottomColor: '#eee',
   },
   title: {
-    fontFamily: 'RobotoSlab-Bold', // Match the file name
+    fontFamily: 'RobotoSlab-Bold',
     fontSize: 24,
   },
   body: {
-    fontFamily: 'RobotoSlab-Medium', // Match the file name
+    fontFamily: 'RobotoSlab-Medium',
     fontSize: 18,
+  },
+  mainContent: {
+    flex: 1,
   },
 });
 
+export default Receptionist;
