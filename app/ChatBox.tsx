@@ -24,10 +24,34 @@ const ChatBox: React.FC = () => {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState<Message[]>([]);
 
-  const handleSend = () => {
+  // Change the handleSend function to be async
+  const handleSend = async () => {
     if (message.trim()) {
+      // Update the messages state with the user message
       setMessages([...messages, { id: Date.now(), text: message, sender: 'user' }]);
       setMessage('');
+
+      // Send the message to the Firebase function
+      try {
+        const response = await fetch('https://getopenairesponse-7wkwbcbeda-uc.a.run.app', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ message }), // Sending the user message to Firebase
+        });
+
+        // Get the response from Firebase (the bot's reply)
+        const data = await response.json();
+
+        // Add the bot's response to the chat
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { id: Date.now(), text: data.reply, sender: 'bot' },
+        ]);
+      } catch (error) {
+        console.error('Error calling Firebase function:', error);
+      }
     }
   };
 

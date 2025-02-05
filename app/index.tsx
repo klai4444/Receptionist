@@ -4,6 +4,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import ChatBox from './ChatBox';
 import Location from './Location';
+
 const firebaseConfig = {
   apiKey: "AIzaSyBZm0-XzyYroEK6trkCQLo5rvsWKNLuvRU",
   authDomain: "receptionist-338.firebaseapp.com",
@@ -48,6 +49,24 @@ const Receptionist: React.FC = () => {
     </View>
   );
 };
+
+const getChatResponse = async (message) => {
+  try {
+      const response = await fetch('https://us-central1-receptionist-338', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ message })
+      });
+
+      const data = await response.json();
+      console.log('OpenAI Response:', data);
+  } catch (error) {
+      console.error('Error fetching OpenAI response:', error);
+  }
+};
+
 
 const styles = StyleSheet.create<Styles>({
   container: {
