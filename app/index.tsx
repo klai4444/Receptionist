@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, Text, TextInput, ScrollView, TouchableOpacity, StyleSheet, ViewStyle, TextStyle } from "react-native";
+import React, { useEffect } from 'react';
+import { View, Text, StyleSheet, ViewStyle, TextStyle } from "react-native";
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import ChatBox from './ChatBox';
@@ -26,6 +26,10 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 const Receptionist: React.FC = () => {
+  useEffect(() => {
+    document.title = 'Receptionist';
+  }, []);
+
   return (
     <View style={styles.container}>
       <View style={styles.titleContainer}>
@@ -42,21 +46,26 @@ const Receptionist: React.FC = () => {
 const styles = StyleSheet.create<Styles>({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#1b1c1b',
   },
   titleContainer: {
     padding: 20,
     alignItems: 'center',
-    borderBottomWidth: 1,
-    borderBottomColor: '#eee',
+    backgroundColor: 'rgba(27, 28, 27, 0.8)', 
+    backdropFilter: 'blur(10px)', 
+    borderBottomWidth: 0, 
   },
   title: {
-    fontFamily: 'RobotoSlab-Bold',
+    fontFamily: 'RobotoSlab-ExtraBold',
     fontSize: 24,
+    color: '#2563eb',
+    marginBottom: 4, 
   },
   body: {
-    fontFamily: 'RobotoSlab-Medium',
-    fontSize: 18,
+    fontFamily: 'RobotoSlab-Bold',
+    fontSize: 16, 
+    color: '#2563eb', 
+    opacity: 0.9, 
   },
   mainContent: {
     flex: 1,
