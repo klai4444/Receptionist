@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, ScrollView, TouchableOpacity, StyleSheet, ViewStyle, TextStyle } from 'react-native';
+import { View, Text, TextInput, ScrollView, TouchableOpacity, StyleSheet, ViewStyle, TextStyle, NativeSyntheticEvent, TextInputKeyPressEventData } from 'react-native';
 
 interface Message {
   id: number;
@@ -14,6 +14,7 @@ interface Styles {
   userMessage: ViewStyle;
   botMessage: ViewStyle;
   messageText: TextStyle;
+  botMessageText: TextStyle;
   inputContainer: ViewStyle;
   input: TextStyle;
   sendButton: ViewStyle;
@@ -26,8 +27,15 @@ const ChatBox: React.FC = () => {
 
   const handleSend = () => {
     if (message.trim()) {
-      setMessages([...messages, { id: Date.now(), text: message, sender: 'user' }]);
+      setMessages([...messages, { id: Date.now(), text: message.trim(), sender: 'user' }]);
       setMessage('');
+    }
+  };
+
+  const handleKeyPress = (e: NativeSyntheticEvent<TextInputKeyPressEventData>) => {
+    if (e.nativeEvent.key === 'Enter') {
+      e.preventDefault(); // Prevent default enter behavior
+      handleSend();
     }
   };
 
@@ -42,7 +50,9 @@ const ChatBox: React.FC = () => {
               msg.sender === 'user' ? styles.userMessage : styles.botMessage,
             ]}
           >
-            <Text style={styles.messageText}>{msg.text}</Text>
+            <Text style={msg.sender === 'user' ? styles.messageText : styles.botMessageText}>
+              {msg.text}
+            </Text>
           </View>
         ))}
       </ScrollView>
@@ -51,9 +61,10 @@ const ChatBox: React.FC = () => {
           style={styles.input}
           value={message}
           onChangeText={setMessage}
+          onKeyPress={handleKeyPress}
           placeholder="Type a message..."
           placeholderTextColor="#666"
-          multiline
+          multiline={false} 
         />
         <TouchableOpacity 
           style={styles.sendButton} 
@@ -69,59 +80,70 @@ const ChatBox: React.FC = () => {
 const styles = StyleSheet.create<Styles>({
   container: {
     flex: 1,
+    backgroundColor: '#030303',
   },
   messagesContainer: {
     flex: 1,
-    padding: 10,
+    padding: 16,
   },
   messageBubble: {
     maxWidth: '80%',
     padding: 12,
     borderRadius: 20,
-    marginVertical: 5,
+    marginVertical: 6,
   },
   userMessage: {
-    backgroundColor: '#007AFF',
+    backgroundColor: '#2563eb',
     alignSelf: 'flex-end',
+    borderBottomRightRadius: 4,
   },
   botMessage: {
-    backgroundColor: '#E5E5EA',
+    backgroundColor: '#ffffff',
     alignSelf: 'flex-start',
+    borderBottomLeftRadius: 4,
+    borderWidth: 1,
+    borderColor: '#e5e7eb',
   },
   messageText: {
-    color: '#fff',
+    color: '#ffffff',
     fontSize: 16,
+    lineHeight: 24,
+    fontFamily: 'RobotoSlab-Regular',
+  },
+  botMessageText: {
+    color: '#1f2937',
+    fontSize: 16,
+    lineHeight: 24,
     fontFamily: 'RobotoSlab-Regular',
   },
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#fff',
-    padding: 10,
+    backgroundColor: '#030303',
+    padding: 12,
     borderTopWidth: 1,
-    borderTopColor: '#eee',
+    borderTopColor: '#030303',
   },
   input: {
     flex: 1,
-    minHeight: 40,
-    maxHeight: 100,
+    height: 40, // Fixed height
     fontFamily: 'RobotoSlab-Regular',
     fontSize: 16,
-    color: '#000',
-    backgroundColor: '#f8f8f8',
+    color: '#1f2937',
+    backgroundColor: '#f9fafb',
     borderRadius: 20,
-    paddingHorizontal: 15,
+    paddingHorizontal: 16,
     paddingVertical: 8,
-    marginRight: 10,
+    marginRight: 12,
   },
   sendButton: {
-    backgroundColor: '#007AFF',
+    backgroundColor: '#2563eb',
     paddingHorizontal: 20,
-    paddingVertical: 8,
+    paddingVertical: 10,
     borderRadius: 20,
   },
   sendButtonText: {
-    color: '#fff',
+    color: '#ffffff',
     fontSize: 16,
     fontFamily: 'RobotoSlab-Medium',
   },
