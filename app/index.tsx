@@ -30,7 +30,7 @@ const Receptionist: React.FC = () => {
     <View style={styles.container}>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>Receptionist</Text>
-        <Text style={styles.body}>Virtual receptionist, anytime, anywhere, anyone.</Text>
+        <Text style={styles.body}>Virtual receptionist - Mudd</Text>
       </View>
       <View style={styles.mainContent}>
         <ChatBox />

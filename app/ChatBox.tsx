@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, ScrollView, TouchableOpacity, StyleSheet, ViewStyle, TextStyle } from 'react-native';
+import { View, Text, TextInput, ScrollView, TouchableOpacity, StyleSheet, ViewStyle, TextStyle, Alert, PermissionsAndroid, Platform } from 'react-native';
+import axios from 'axios';
+import Geolocation from '@react-native-community/geolocation';
 
 interface Message {
   id: number;
@@ -20,14 +22,103 @@ interface Styles {
   sendButtonText: TextStyle;
 }
 
+const API_KEY = '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'; // Replace with your OpenAI API key
+const API_URL = 'https://api.openai.com/v1/chat/completions';
+
 const ChatBox: React.FC = () => {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState<Message[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [location, setLocation] = useState<string | null>(null);
 
-  const handleSend = () => {
-    if (message.trim()) {
-      setMessages([...messages, { id: Date.now(), text: message, sender: 'user' }]);
-      setMessage('');
+  // Function to request location permission and get location
+  const requestLocationAndFetch = async () => {
+    try {
+      if (Platform.OS === 'android') {
+        const granted = await PermissionsAndroid.request(
+          PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION
+        );
+
+        if (granted !== PermissionsAndroid.RESULTS.GRANTED) {
+          Alert.alert('Permission Denied', 'Cannot access location');
+          return null;
+        }
+      }
+
+      return new Promise<string | null>((resolve) => {
+        Geolocation.getCurrentPosition(
+          (position) => {
+            const { latitude, longitude } = position.coords;
+            resolve(`Latitude: ${latitude}, Longitude: ${longitude}`);
+          },
+          (error) => {
+            console.error('Location Error:', error);
+            resolve(null);
+          },
+          { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
+        );
+      });
+    } catch (error) {
+      console.error('Permission error:', error);
+      return null;
+    }
+  };
+
+  const handleSend = async () => {
+    if (!message.trim()) return;
+
+    const newUserMessage: Message = {
+      id: Date.now(),
+      text: message,
+      sender: 'user',
+    };
+
+    const newMessages = [...messages, newUserMessage];
+    setMessages(newMessages);
+    setMessage('');
+    setLoading(true);
+
+    try {
+      const userLocation = await requestLocationAndFetch(); // Ask for permission every time
+      const promptWithLocation = userLocation
+        ? `User's location: ${userLocation}. Message: ${message}`
+        : message;
+
+      const response = await axios.post(
+        API_URL,
+        {
+          model: 'gpt-3.5-turbo', // Or 'gpt-4'
+          messages: [{ role: 'user', content: promptWithLocation }, { role: 'system', content: 'You are a virtual receptionist in Mudd Library at Northwestern University. You know that 2233 Tech Drive is the address of Mudd Library. You also know that Professor Kristian Hammond\'s office is in Mudd Room 3109 and his number is 847-467-1012. Do not give out phone numbers unless prompted. There is also Professor Ian Horswill\'s office in Mudd 3537 and his phone number is 847-467-1256.' }],
+        },
+        {
+          headers: {
+            'Authorization': `Bearer ${API_KEY}`,
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+
+      const botReplyText = response.data.choices[0]?.message?.content || 'I am unable to respond at the moment.';
+
+      const botReply: Message = {
+        id: Date.now() + 1,
+        text: botReplyText,
+        sender: 'bot',
+      };
+
+      setMessages([...newMessages, botReply]);
+    } catch (error) {
+      console.error('Error fetching response:', error);
+
+      const errorMessage: Message = {
+        id: Date.now() + 1,
+        text: 'Error: Unable to get a response.',
+        sender: 'bot',
+      };
+
+      setMessages([...newMessages, errorMessage]);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -57,9 +148,10 @@ const ChatBox: React.FC = () => {
         />
         <TouchableOpacity 
           style={styles.sendButton} 
-          onPress={handleSend}
+          onPress={handleSend} 
+          disabled={loading}
         >
-          <Text style={styles.sendButtonText}>Send</Text>
+          <Text style={styles.sendButtonText}>{loading ? '...' : 'Send'}</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -89,7 +181,7 @@ const styles = StyleSheet.create<Styles>({
     alignSelf: 'flex-start',
   },
   messageText: {
-    color: '#fff',
+    color: '#000',
     fontSize: 16,
     fontFamily: 'RobotoSlab-Regular',
   },
