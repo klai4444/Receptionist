@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, ScrollView, TouchableOpacity, StyleSheet, ViewStyle, TextStyle, NativeSyntheticEvent, TextInputKeyPressEventData } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, TextInput, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
 
 interface Message {
   id: number;
@@ -7,23 +7,61 @@ interface Message {
   sender: 'user' | 'bot';
 }
 
-interface Styles {
-  container: ViewStyle;
-  messagesContainer: ViewStyle;
-  messageBubble: ViewStyle;
-  userMessage: ViewStyle;
-  botMessage: ViewStyle;
-  messageText: TextStyle;
-  botMessageText: TextStyle;
-  inputContainer: ViewStyle;
-  input: TextStyle;
-  sendButton: ViewStyle;
-  sendButtonText: TextStyle;
-}
-
 const ChatBox: React.FC = () => {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState<Message[]>([]);
+  const [isListening, setIsListening] = useState(false);
+  const [recognition, setRecognition] = useState<SpeechRecognition | null>(null);
+
+  useEffect(() => {
+    if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+      // Create speech recognition instance
+      const SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
+      const recognitionInstance = new SpeechRecognition();
+      
+      recognitionInstance.continuous = false;
+      recognitionInstance.interimResults = false;
+      recognitionInstance.lang = 'en-US';
+
+      recognitionInstance.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        setMessage(prev => prev + ' ' + transcript.trim());
+        setIsListening(false);
+      };
+
+      recognitionInstance.onerror = (event) => {
+        console.error('Speech recognition error:', event.error);
+        setIsListening(false);
+      };
+
+      recognitionInstance.onend = () => {
+        setIsListening(false);
+      };
+
+      setRecognition(recognitionInstance);
+    } else {
+      console.log('Speech recognition not supported in this browser');
+    }
+  }, []);
+
+  const toggleVoiceRecognition = async () => {
+    if (!recognition) {
+      console.log('Speech recognition not available');
+      return;
+    }
+
+    if (isListening) {
+      recognition.stop();
+      setIsListening(false);
+    } else {
+      try {
+        await recognition.start();
+        setIsListening(true);
+      } catch (error) {
+        console.error('Error starting speech recognition:', error);
+      }
+    }
+  };
 
   const handleSend = () => {
     if (message.trim()) {
@@ -32,9 +70,9 @@ const ChatBox: React.FC = () => {
     }
   };
 
-  const handleKeyPress = (e: NativeSyntheticEvent<TextInputKeyPressEventData>) => {
-    if (e.nativeEvent.key === 'Enter') {
-      e.preventDefault(); // Prevent default enter behavior
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
       handleSend();
     }
   };
@@ -57,14 +95,19 @@ const ChatBox: React.FC = () => {
         ))}
       </ScrollView>
       <View style={styles.inputContainer}>
+        <TouchableOpacity 
+          style={[styles.voiceButton, isListening && styles.voiceButtonActive]} 
+          onPress={toggleVoiceRecognition}
+        >
+          <Text style={styles.sendButtonText}>🎤</Text>
+        </TouchableOpacity>
         <TextInput
           style={styles.input}
           value={message}
-          onChangeText={setMessage}
+          onChange={(e) => setMessage(e.target.value)}
           onKeyPress={handleKeyPress}
           placeholder="Type a message..."
           placeholderTextColor="#666"
-          multiline={false} 
         />
         <TouchableOpacity 
           style={styles.sendButton} 
@@ -77,7 +120,7 @@ const ChatBox: React.FC = () => {
   );
 };
 
-const styles = StyleSheet.create<Styles>({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#030303',
@@ -126,7 +169,7 @@ const styles = StyleSheet.create<Styles>({
   },
   input: {
     flex: 1,
-    height: 40, // Fixed height
+    height: 40,
     fontFamily: 'RobotoSlab-Regular',
     fontSize: 16,
     color: '#1f2937',
@@ -146,6 +189,19 @@ const styles = StyleSheet.create<Styles>({
     color: '#ffffff',
     fontSize: 16,
     fontFamily: 'RobotoSlab-Medium',
+  },
+  voiceButton: {
+    backgroundColor: '#2563eb',
+    padding: 10,
+    borderRadius: 20,
+    marginRight: 12,
+    width: 40,
+    height: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  voiceButtonActive: {
+    backgroundColor: '#dc2626',
   },
 });
 
