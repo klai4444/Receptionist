@@ -57,20 +57,20 @@ const styles = StyleSheet.create<Styles>({
   titleContainer: {
     padding: 20,
     alignItems: 'center',
-    backgroundColor: 'rgba(27, 28, 27, 0.8)', 
+    backgroundColor: '#212121', 
     backdropFilter: 'blur(10px)', 
     borderBottomWidth: 0, 
   },
   title: {
     fontFamily: 'RobotoSlab-ExtraBold',
     fontSize: 24,
-    color: '#2563eb',
+    color: '#e8e4e3',
     marginBottom: 4, 
   },
   body: {
-    fontFamily: 'RobotoSlab-Bold',
+    fontFamily: 'RobotoSlab-ExtraBold',
     fontSize: 16, 
-    color: '#2563eb', 
+    color: '#e8e4e3', 
     opacity: 0.9, 
   },
   mainContent: {

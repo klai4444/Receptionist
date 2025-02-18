@@ -106,8 +106,8 @@ const ChatBox: React.FC = () => {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           onKeyPress={handleKeyPress}
-          placeholder="Type a message..."
-          placeholderTextColor="#666"
+          placeholder="Ask Receptionist"
+          placeholderTextColor="#969696"
         />
         <TouchableOpacity 
           style={styles.sendButton} 
@@ -123,7 +123,7 @@ const ChatBox: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#030303',
+    backgroundColor: '#212121',
   },
   messagesContainer: {
     flex: 1,
@@ -136,19 +136,19 @@ const styles = StyleSheet.create({
     marginVertical: 6,
   },
   userMessage: {
-    backgroundColor: '#2563eb',
+    backgroundColor: '#2f2f2f',
     alignSelf: 'flex-end',
     borderBottomRightRadius: 4,
   },
   botMessage: {
-    backgroundColor: '#ffffff',
+    backgroundColor: '#212121',
     alignSelf: 'flex-start',
     borderBottomLeftRadius: 4,
     borderWidth: 1,
     borderColor: '#e5e7eb',
   },
   messageText: {
-    color: '#ffffff',
+    color: '#e8e4e3',
     fontSize: 16,
     lineHeight: 24,
     fontFamily: 'RobotoSlab-Regular',
@@ -162,18 +162,16 @@ const styles = StyleSheet.create({
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#030303',
+    backgroundColor: '#212121',
     padding: 12,
-    borderTopWidth: 1,
-    borderTopColor: '#030303',
   },
   input: {
     flex: 1,
     height: 40,
     fontFamily: 'RobotoSlab-Regular',
     fontSize: 16,
-    color: '#1f2937',
-    backgroundColor: '#f9fafb',
+    color: '#e8e4e3',
+    backgroundColor: '#2f2f2f',
     borderRadius: 20,
     paddingHorizontal: 16,
     paddingVertical: 8,
