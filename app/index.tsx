@@ -37,10 +37,12 @@ const Receptionist: React.FC = () => {
   };
   return (
     <View style={styles.container}>
+      {/*
       <View style={styles.titleContainer}>
         <Text style={styles.title}>Receptionist</Text>
         <Text style={styles.body}>Your Virtual Receptionist At Mudd Library</Text>
       </View>
+      */}
       <View style={styles.mainContent}>
         <ChatBox />
         <Location onLocationFetched={handleLocationFetched} onError={handleError} />
@@ -52,7 +54,7 @@ const Receptionist: React.FC = () => {
 const styles = StyleSheet.create<Styles>({
   container: {
     flex: 1,
-    backgroundColor: '#1b1c1b',
+    backgroundColor: '#E4E0EE',
   },
   titleContainer: {
     padding: 20,
@@ -63,7 +65,7 @@ const styles = StyleSheet.create<Styles>({
   },
   title: {
     fontFamily: 'RobotoSlab-ExtraBold',
-    fontSize: 24,
+    fontSize: 50,
     color: '#e8e4e3',
     marginBottom: 4, 
   },

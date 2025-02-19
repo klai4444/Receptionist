@@ -109,12 +109,15 @@ const ChatBox: React.FC = () => {
           placeholder="Ask Receptionist"
           placeholderTextColor="#969696"
         />
+        {/*
+        
         <TouchableOpacity 
           style={styles.sendButton} 
           onPress={handleSend}
         >
           <Text style={styles.sendButtonText}>Send</Text>
         </TouchableOpacity>
+        */}
       </View>
     </View>
   );
@@ -123,7 +126,7 @@ const ChatBox: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#212121',
+    backgroundColor: 'rgb(204, 196, 223)',
   },
   messagesContainer: {
     flex: 1,
@@ -136,7 +139,7 @@ const styles = StyleSheet.create({
     marginVertical: 6,
   },
   userMessage: {
-    backgroundColor: '#2f2f2f',
+    backgroundColor: 'rgb(255, 255, 255)',
     alignSelf: 'flex-end',
     borderBottomRightRadius: 4,
   },
@@ -148,7 +151,7 @@ const styles = StyleSheet.create({
     borderColor: '#e5e7eb',
   },
   messageText: {
-    color: '#e8e4e3',
+    color: 'rgb(0, 0, 0)',
     fontSize: 16,
     lineHeight: 24,
     fontFamily: 'RobotoSlab-Regular',
@@ -162,7 +165,7 @@ const styles = StyleSheet.create({
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#212121',
+    backgroundColor: 'rgb(204, 196, 223)',
     padding: 12,
   },
   input: {
@@ -170,8 +173,8 @@ const styles = StyleSheet.create({
     height: 40,
     fontFamily: 'RobotoSlab-Regular',
     fontSize: 16,
-    color: '#e8e4e3',
-    backgroundColor: '#2f2f2f',
+    color: 'rgb(0, 0, 0)',
+    backgroundColor: 'rgb(255, 255, 255)',
     borderRadius: 20,
     paddingHorizontal: 16,
     paddingVertical: 8,
