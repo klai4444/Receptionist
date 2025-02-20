@@ -1,79 +1,64 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { View, Text, TextInput, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
-
-interface Message {
-  id: number;
-  text: string;
-  sender: 'user' | 'bot';
-}
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 const ChatBox: React.FC = () => {
   const [message, setMessage] = useState('');
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<{ id: number; text: string; sender: 'user' | 'bot' }[]>([]);
   const [isListening, setIsListening] = useState(false);
-  const [recognition, setRecognition] = useState<SpeechRecognition | null>(null);
+  const recognitionRef = useRef<SpeechRecognition | null>(null);
 
   useEffect(() => {
-    if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
-      // Create speech recognition instance
+    if (typeof window !== 'undefined' && ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
       const SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
       const recognitionInstance = new SpeechRecognition();
       
-      recognitionInstance.continuous = false;
-      recognitionInstance.interimResults = false;
+      recognitionInstance.continuous = true;  
+      recognitionInstance.interimResults = true; 
       recognitionInstance.lang = 'en-US';
 
-      recognitionInstance.onresult = (event) => {
-        const transcript = event.results[0][0].transcript;
-        setMessage(prev => prev + ' ' + transcript.trim());
-        setIsListening(false);
+      recognitionInstance.onresult = (event: SpeechRecognitionEvent) => {
+        let transcript = '';
+        for (let i = event.resultIndex; i < event.results.length; i++) {
+          transcript += event.results[i][0].transcript + ' ';
+        }
+        setMessage(transcript.trim());
       };
-
-      recognitionInstance.onerror = (event) => {
+      
+      recognitionInstance.onerror = (event: SpeechRecognitionErrorEvent) => {
         console.error('Speech recognition error:', event.error);
         setIsListening(false);
       };
+      
 
       recognitionInstance.onend = () => {
-        setIsListening(false);
+        if (isListening) {
+          recognitionInstance.start(); 
+        }
       };
 
-      setRecognition(recognitionInstance);
+      recognitionRef.current = recognitionInstance;
     } else {
       console.log('Speech recognition not supported in this browser');
     }
   }, []);
 
   const toggleVoiceRecognition = async () => {
-    if (!recognition) {
+    if (!recognitionRef.current) {
       console.log('Speech recognition not available');
       return;
     }
 
     if (isListening) {
-      recognition.stop();
+      recognitionRef.current.stop();
       setIsListening(false);
     } else {
       try {
-        await recognition.start();
+        recognitionRef.current.start();
         setIsListening(true);
       } catch (error) {
         console.error('Error starting speech recognition:', error);
       }
-    }
-  };
-
-  const handleSend = () => {
-    if (message.trim()) {
-      setMessages([...messages, { id: Date.now(), text: message.trim(), sender: 'user' }]);
-      setMessage('');
-    }
-  };
-
-  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault();
-      handleSend();
     }
   };
 
@@ -96,22 +81,28 @@ const ChatBox: React.FC = () => {
       </ScrollView>
       <View style={styles.inputContainer}>
         <TouchableOpacity 
-          style={[styles.voiceButton, isListening && styles.voiceButtonActive]} 
+          style={[styles.voiceButton, isListening ? styles.voiceButtonActive : styles.voiceButtonInactive]} 
           onPress={toggleVoiceRecognition}
         >
-          <Text style={styles.sendButtonText}>🎤</Text>
+          <FontAwesome 
+            name={isListening ? 'microphone' : 'microphone-slash'} 
+            size={20} 
+            color="white"
+          />
         </TouchableOpacity>
         <TextInput
           style={styles.input}
           value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          onKeyPress={handleKeyPress}
+          onChangeText={setMessage}
           placeholder="Type a message..."
           placeholderTextColor="#666"
         />
         <TouchableOpacity 
           style={styles.sendButton} 
-          onPress={handleSend}
+          onPress={() => {
+            setMessages([...messages, { id: Date.now(), text: message, sender: 'user' }]);
+            setMessage('');
+          }}
         >
           <Text style={styles.sendButtonText}>Send</Text>
         </TouchableOpacity>
@@ -191,7 +182,6 @@ const styles = StyleSheet.create({
     fontFamily: 'RobotoSlab-Medium',
   },
   voiceButton: {
-    backgroundColor: '#2563eb',
     padding: 10,
     borderRadius: 20,
     marginRight: 12,
@@ -200,8 +190,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  voiceButtonActive: {
+  voiceButtonInactive: {
     backgroundColor: '#dc2626',
+  },
+  voiceButtonActive: {
+    backgroundColor: '#2563eb',
   },
 });
 
