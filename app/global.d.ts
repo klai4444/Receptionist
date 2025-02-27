@@ -48,3 +48,5 @@ declare interface Window {
     start(): void;
     stop(): void;
   }
+
+export default {} as typeof globalThis;
