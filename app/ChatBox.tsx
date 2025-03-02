@@ -401,96 +401,85 @@ const ChatBox: React.FC = () => {
 };
 
 const styles = StyleSheet.create({
-  container: { 
-    flex: 1, 
-    backgroundColor: '#030303',
+  container: {
+    flex: 1,
+    backgroundColor: 'rgb(204, 196, 223)',
   },
-  errorBanner: {
-    backgroundColor: '#B91C1C',
-    padding: 10,
-    width: '100%',
-  },
-  messagesContainer: { 
-    flex: 1, 
+  messagesContainer: {
+    flex: 1,
     padding: 16,
   },
-  scrollContent: {
-    flexGrow: 1,
-  },
-  messageBubble: { 
-    maxWidth: '80%', 
-    padding: 12, 
-    borderRadius: 20, 
+  messageBubble: {
+    maxWidth: '80%',
+    padding: 12,
+    borderRadius: 20,
     marginVertical: 6,
   },
-  userMessage: { 
-    backgroundColor: '#2563eb', 
-    alignSelf: 'flex-end', 
+  userMessage: {
+    backgroundColor: 'rgb(255, 255, 255)',
+    alignSelf: 'flex-end',
     borderBottomRightRadius: 4,
   },
-  botMessage: { 
-    backgroundColor: '#ffffff', 
-    alignSelf: 'flex-start', 
-    borderBottomLeftRadius: 4, 
-    borderWidth: 1, 
+  botMessage: {
+    backgroundColor: 'rgb(255, 255, 255)',
+    alignSelf: 'flex-start',
+    borderBottomLeftRadius: 4,
+    borderWidth: 1,
     borderColor: '#e5e7eb',
   },
-  messageText: { 
-    color: '#ffffff', 
-    fontSize: 16, 
+  messageText: {
+    color: 'rgb(0, 0, 0)',
+    fontSize: 16,
     lineHeight: 24,
+    fontFamily: 'RobotoSlab-Regular',
   },
-  botMessageText: { 
-    color: '#1f2937', 
-    fontSize: 16, 
+  botMessageText: {
+    color: '#1f2937',
+    fontSize: 16,
     lineHeight: 24,
+    fontFamily: 'RobotoSlab-Regular',
   },
-  errorText: {
-    color: '#FFFFFF',
-    fontSize: 14,
+  inputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'rgb(204, 196, 223)',
+    padding: 12,
   },
-  inputContainer: { 
-    flexDirection: 'row', 
-    alignItems: 'center', 
-    padding: 12, 
-    borderTopWidth: 1, 
-    borderTopColor: '#1a1a1a',
-  },
-  input: { 
-    flex: 1, 
-    minHeight: 40, 
-    maxHeight: 120, 
-    fontSize: 16, 
-    color: '#1f2937', 
-    backgroundColor: '#f9fafb', 
-    borderRadius: 20, 
+  input: {
+    flex: 1,
+    height: 40,
+    fontFamily: 'RobotoSlab-Regular',
+    fontSize: 16,
+    color: 'rgb(0, 0, 0)',
+    backgroundColor: 'rgb(255, 255, 255)',
+    borderRadius: 20,
     paddingHorizontal: 16,
-    paddingVertical: 10,
+    paddingVertical: 8,
     marginRight: 12,
   },
-  sendButton: { 
-    backgroundColor: '#2563eb', 
-    paddingHorizontal: 20, 
-    paddingVertical: 10, 
+  sendButton: {
+    backgroundColor: '#2563eb',
+    paddingHorizontal: 20,
+    paddingVertical: 10,
     borderRadius: 20,
+  },
+  sendButtonText: {
+    color: '#ffffff',
+    fontSize: 16,
+    fontFamily: 'RobotoSlab-Medium',
+  },
+  voiceButton: {
+    backgroundColor: '#2563eb',
+    padding: 10,
+    borderRadius: 20,
+    marginRight: 12,
+    width: 40,
+    height: 40,
     justifyContent: 'center',
     alignItems: 'center',
   },
-  disabledButton: {
-    backgroundColor: '#93c5fd',
-    opacity: 0.7,
-  },
-  sendButtonText: { 
-    color: '#ffffff', 
-    fontSize: 16,
-  },
-  loadingContainer: {
-    padding: 8,
-    alignSelf: 'flex-start',
-  },
-  loadingText: {
-    color: '#9ca3af',
-    fontStyle: 'italic',
+  voiceButtonActive: {
+    backgroundColor: '#dc2626',
   },
 });
 
