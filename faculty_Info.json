@@ -1,0 +1,177 @@
+[
+    {
+        "Name":"Samir Khuller",
+        "Office ":"Mudd 3017",
+        "Title":"Professor of Computer Science",
+        "Number":"847-491-2748",
+        "Email":"compscichair@northwestern.edu"
+    },
+    {
+        "Name":"Anjali Agarwal",
+        "Office ":"Tech",
+        "Title":"Lecturer",
+        "Number":"847-491-2748",
+        "Email":"anjali.agarwal@northwestern.edu"
+    },
+    {
+        "Name":"Connor Bain",
+        "Office ":"Tech L374",
+        "Title":"Assistant Professor of Instruction",
+        "Number":"847-491-2749",
+        "Email":"connor.bain@northwestern.edu"
+    },
+    {
+        "Name":"Sruti Bhagavtula",
+        "Office ":"Mudd 3510",
+        "Title":"Assistant Professor of Instruction",
+        "Number":"847-491-2750",
+        "Email":"srutib@northwestern.edu"
+    },
+    {
+        "Name":"Yan Chen",
+        "Office ":"Mudd 3007",
+        "Title":"Professor of Computer Science",
+        "Number":"847-491-4946",
+        "Email":"ychen@northwestern.edu"
+    },
+    {
+        "Name":"Noshir Contractor",
+        "Office ":"Tech D241",
+        "Title":"Professor of Communication Studies, Professor of Management and Organizations",
+        "Number":"847-491-4946",
+        "Email":"nosh@northwestern.edu"
+    },
+    {
+        "Name":"Andrew Crotty",
+        "Office ":"Mudd 3211",
+        "Title":"Assistant Professor of Computer Science",
+        "Number":"847-491-4947",
+        "Email":"andrew.crotty@northwestern.edu"
+    },
+    {
+        "Name":"Christo Dimoulas",
+        "Office ":"Mudd 3513",
+        "Title":"Assistant Professor of Computer Science",
+        "Number":"847-491-4948",
+        "Email":"christos.dimoulas@northwestern.edu"
+    },
+    {
+        "Name":"Peter Dinda",
+        "Office ":"Mudd 3507",
+        "Title":"Professor of Computer Science",
+        "Number":"847-467-7859",
+        "Email":"pdinda@northwestern.edu"
+    },
+    {
+        "Name":"Darren Gergle",
+        "Office ":"Frances Searle 1-158",
+        "Title":"Professor of Computer Science and Communication Studies",
+        "Number":"847-467-1221",
+        "Email":"dgergle@northwestern.edu"
+    },
+    {
+        "Name":"Branden Ghena",
+        "Office ":"Tech L368",
+        "Title":"Assistant Professor of Instruction",
+        "Number":"847-467-1221",
+        "Email":"branden@northwestern.edu"
+    },
+    {
+        "Name":"Kristian Hammond",
+        "Office ":"Mudd 3109",
+        "Title":"Professor of Computer Science, Director of MS in AI, Director of CASMI",
+        "Number":"847-467-1012",
+        "Email":"hammond@cs.northwestern.edu"
+    },
+    {
+        "Name":"Nikos Hardavellas",
+        "Office ":"Mudd 3517",
+        "Title":"Professor of Computer Science",
+        "Number":"847-491-2970",
+        "Email":"nikos@northwestern.edu"
+    },
+    {
+        "Name":"Jason Hartline",
+        "Office ":"Mudd 3015",
+        "Title":"Professor of Computer Science",
+        "Number":"847-467-0280",
+        "Email":"hartline@northwestern.edu"
+    },
+    {
+        "Name":"Ian Horswill",
+        "Office ":"Mudd 3537",
+        "Title":"Associate Professor of Computer Science",
+        "Number":"847-467-1256",
+        "Email":"ian@northwestern.edu"
+    },
+    {
+        "Name":"Jessica Hullman",
+        "Office ":"Mudd 3521",
+        "Title":"Professor of Computer Science",
+        "Number":"847-467-1257",
+        "Email":"jhullman@northwestern.edu"
+    },
+    {
+        "Name":"Joseph Hummel",
+        "Office ":"Tech L365",
+        "Title":"Professor of Instruction",
+        "Number":"847-467-1258",
+        "Email":"joe.hummel@northwestern.edu"
+    },
+    {
+        "Name":"Matthew Kay",
+        "Office ":"Mudd 2233",
+        "Title":"Associate Professor of Computer Science",
+        "Number":"847-467-1259",
+        "Email":"mjskay@northwestern.edu"
+    },
+    {
+        "Name":"Konstanin Markarychev",
+        "Office ":"Mudd 3009",
+        "Title":"Professor of Computer Science, Associate Chair for Graduate Studies",
+        "Number":"847-467-1260",
+        "Email":"konstantin@northwestern.edu"
+    },
+    {
+        "Name":"Chris Riesbeck",
+        "Office ":"Mudd 3117",
+        "Title":"Associate Professor of Computer Science, Director MS in CS",
+        "Number":"847-491-7279",
+        "Email":"c-riesbeck@northwestern.edu"
+    },
+    {
+        "Name":"Michael Rubenstein",
+        "Office ":"Tech B224",
+        "Title":"Associate Professor of Computer Science",
+        "Number":"847-491-7280",
+        "Email":"rubenstein@northwestern.edu"
+    },
+    {
+        "Name":"Sara Owsley Sood",
+        "Office ":"Tech L376",
+        "Title":"Professor of Instruction",
+        "Number":"847-491-5708",
+        "Email":"sara@northwestern.edu"
+    },
+    {
+        "Name":"Vincent St-Amour",
+        "Office ":"Tech L366",
+        "Title":"Associate Professor of Instruction",
+        "Number":"847-491-5709",
+        "Email":"stamourv@eecs.northwestern.edu"
+    },
+    {
+        "Name":"Jack Tumblin",
+        "Office ":"Mudd 3221",
+        "Title":"Associate Professor Emeritus of Computer Science",
+        "Number":"847-467-2129",
+        "Email":"j-tumblin@northwestern.edu"
+    },
+    {
+        "Name":"Aravindan Vijayaraghavan",
+        "Office ":"Mudd 3011",
+        "Title":"Associate Professor of Computer Science",
+        "Number":"847-467-6145",
+        "Email":"aravindv@northwestern.edu"
+    }
+]

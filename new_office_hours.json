@@ -1,0 +1,1525 @@
+[
+  {
+    "course": "CS211",
+    "sessions": {
+      "M": [
+        {
+          "time": "11:00 AM",
+          "room": "Mudd 3 floor front counter"
+        },
+        {
+          "time": "12:00 PM",
+          "room": "Mudd 3 floor front counter"
+        },
+        {
+          "time": "1:00 PM",
+          "room": "First floor lobby of Mudd"
+        },
+        {
+          "time": "2:00 PM",
+          "room": "First floor lobby of Mudd"
+        },
+        {
+          "time": "3:00 PM",
+          "room": "Mudd 3108"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "ANNG29"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "ANNG29"
+        }
+      ],
+      "Tu": [
+        {
+          "time": "2:00 PM",
+          "room": "Mudd 3 floor front counter"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "First floor lobby of Mudd"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "First floor lobby of Mudd"
+        }
+      ],
+      "W": [
+        {
+          "time": "1:00 PM",
+          "room": "TCHLR4"
+        },
+        {
+          "time": "3:00 PM",
+          "room": "LIB3722"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "LIB3722"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "Mudd 3108"
+        }
+      ],
+      "Th": [
+        {
+          "time": "2:00 PM",
+          "room": "First floor lobby of Mudd"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "ANNG29"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "ANNG29"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "Mudd 3 floor front counter"
+        }
+      ],
+      "F": [
+        {
+          "time": "10:00 AM",
+          "room": "First floor lobby of Mudd"
+        },
+        {
+          "time": "11:00 AM",
+          "room": "First floor lobby of Mudd"
+        },
+        {
+          "time": "2:00 PM",
+          "room": "TCHM166"
+        },
+        {
+          "time": "3:00 PM",
+          "room": "TCHM166"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "TCHL170"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "Mudd 3108"
+        },
+        {
+          "time": "7:00 PM",
+          "room": "Mudd 3108"
+        },
+        {
+          "time": "9:00 AM",
+          "room": "First floor lobby of Mudd"
+        }
+      ]
+    }
+  },
+  {
+    "course": "CS214",
+    "sessions": {
+      "M": [
+        {
+          "time": "10:00 AM",
+          "room": "First floor lobby of Mudd"
+        },
+        {
+          "time": "11:00 AM",
+          "room": "First floor lobby of Mudd"
+        },
+        {
+          "time": "11:00 AM",
+          "room": "Mudd 3108"
+        },
+        {
+          "time": "3:00 PM",
+          "room": "First floor lobby of Mudd"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "First floor lobby of Mudd"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "First floor lobby of Mudd"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "First floor lobby of Mudd"
+        }
+      ],
+      "Tu": [
+        {
+          "time": "3:00 PM",
+          "room": "Mudd 3 floor front counter"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "Mudd 3 floor front counter"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "Mudd 3 floor front counter"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "Mudd 3 floor front counter"
+        }
+      ],
+      "W": [
+        {
+          "time": "10:00 AM",
+          "room": "Mudd 3 floor front counter"
+        },
+        {
+          "time": "11:00 AM",
+          "room": "Mudd 3 floor front counter"
+        },
+        {
+          "time": "3:00 PM",
+          "room": "First floor lobby of Mudd"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "First floor lobby of Mudd"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "First floor lobby of Mudd"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "First floor lobby of Mudd"
+        }
+      ],
+      "Th": [
+        {
+          "time": "3:00 PM",
+          "room": "First floor lobby of Mudd"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "First floor lobby of Mudd"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "First floor lobby of Mudd"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "First floor lobby of Mudd"
+        }
+      ],
+      "F": [
+        {
+          "time": "3:00 PM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "Mudd 3532"
+        }
+      ]
+    }
+  },
+  {
+    "course": "CS310",
+    "sessions": {
+      "M": [
+        {
+          "time": "10:00 AM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "11:00 AM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "1:00 PM",
+          "room": "TCHF280"
+        },
+        {
+          "time": "2:00 PM",
+          "room": "TCHF280"
+        },
+        {
+          "time": "3:00 PM",
+          "room": "TCHF280"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "TCHF280"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "7:00 PM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "9:00 AM",
+          "room": "Mudd 3532"
+        }
+      ],
+      "Tu": [
+        {
+          "time": "10:00 AM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "11:00 AM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "3:00 PM",
+          "room": "TCHLG68"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "TCHLG72"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "7:00 PM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "9:00 AM",
+          "room": "Mudd 3532"
+        }
+      ],
+      "W": [
+        {
+          "time": "10:00 AM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "11:00 AM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "1:00 PM",
+          "room": "TCHM349"
+        },
+        {
+          "time": "2:00 PM",
+          "room": "ELDER32"
+        },
+        {
+          "time": "3:00 PM",
+          "room": "ELDER32"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "TCHM128"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "7:00 PM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "9:00 AM",
+          "room": "Mudd 3532"
+        }
+      ],
+      "Th": [
+        {
+          "time": "10:00 AM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "11:00 AM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "1:00 PM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "3:00 PM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "7:00 PM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "9:00 AM",
+          "room": "Mudd 3532"
+        }
+      ],
+      "F": [
+        {
+          "time": "10:00 AM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "11:00 AM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "1:00 PM",
+          "room": "TCHL170"
+        },
+        {
+          "time": "2:00 PM",
+          "room": "TCHL170"
+        },
+        {
+          "time": "3:00 PM",
+          "room": "TCHM349"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "TCHL361"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "7:00 PM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "9:00 AM",
+          "room": "Mudd 3532"
+        }
+      ]
+    }
+  },
+  {
+    "course": "CS111",
+    "sessions": {
+      "M": [
+        {
+          "time": "2:00 PM",
+          "room": "Mudd 3532"
+        }
+      ],
+      "Tu": [
+        {
+          "time": "11:00 AM",
+          "room": "Mudd 3 floor front counter"
+        },
+        {
+          "time": "3:00 PM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "Mudd 3108"
+        },
+        {
+          "time": "7:00 PM",
+          "room": "Mudd 3108"
+        },
+        {
+          "time": "7:00 PM",
+          "room": "Mudd 3 floor front counter"
+        }
+      ],
+      "W": [
+        {
+          "time": "10:00 AM",
+          "room": "ANNG28"
+        },
+        {
+          "time": "12:00 PM",
+          "room": "ANNG31"
+        },
+        {
+          "time": "12:00 PM",
+          "room": "TCHM128"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "TCHL150"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "TCHL150"
+        }
+      ],
+      "Th": [
+        {
+          "time": "11:00 AM",
+          "room": "LIB3322"
+        },
+        {
+          "time": "1:00 PM",
+          "room": "TCHL160"
+        },
+        {
+          "time": "2:00 PM",
+          "room": "TCHL168"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "ANNG21"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "ANNG21"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "TCHLG68"
+        },
+        {
+          "time": "7:00 PM",
+          "room": "TCHL168"
+        }
+      ],
+      "F": [
+        {
+          "time": "10:00 AM",
+          "room": "ANNG32"
+        },
+        {
+          "time": "2:00 PM",
+          "room": "TCHM120"
+        },
+        {
+          "time": "3:00 PM",
+          "room": "TCHM120"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "TCHM164"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "TCHL170"
+        }
+      ],
+      "Sun": [
+        {
+          "time": "1:00 PM",
+          "room": "TCHA110"
+        },
+        {
+          "time": "2:00 PM",
+          "room": "TCHA110"
+        },
+        {
+          "time": "3:00 PM",
+          "room": "TCHA110"
+        },
+        {
+          "time": "7:00 PM",
+          "room": "TCHL251"
+        }
+      ]
+    }
+  },
+  {
+    "course": "CS340",
+    "sessions": {
+      "M": [
+        {
+          "time": "11:00 AM",
+          "room": "Mudd 3108"
+        },
+        {
+          "time": "1:00 PM",
+          "room": "Mudd 3108"
+        }
+      ],
+      "Tu": [
+        {
+          "time": "11:00 AM",
+          "room": "Mudd 3108"
+        }
+      ],
+      "W": [
+        {
+          "time": "2:00 PM",
+          "room": "Mudd 3108"
+        }
+      ],
+      "F": [
+        {
+          "time": "11:00 AM",
+          "room": "TCHM166"
+        }
+      ]
+    }
+  },
+  {
+    "course": "CS110",
+    "sessions": {
+      "M": [
+        {
+          "time": "1:00 PM",
+          "room": "TCHL170"
+        },
+        {
+          "time": "2:00 PM",
+          "room": "ANNG32"
+        },
+        {
+          "time": "2:00 PM",
+          "room": "TCHA110"
+        }
+      ],
+      "Tu": [
+        {
+          "time": "4:00 PM",
+          "room": "TCHF281"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "TCHLG72"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "ANNG21"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "UNV318"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "TCHLG68"
+        }
+      ],
+      "W": [
+        {
+          "time": "11:00 AM",
+          "room": "TCHLG72"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "Mudd 3 floor front counter"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "TCHLR5"
+        }
+      ],
+      "Th": [
+        {
+          "time": "4:00 PM",
+          "room": "TCHLG72"
+        }
+      ],
+      "F": [
+        {
+          "time": "11:00 AM",
+          "room": "TCHM152"
+        },
+        {
+          "time": "12:00 PM",
+          "room": "TCHM128"
+        },
+        {
+          "time": "1:00 PM",
+          "room": "TCHL160"
+        },
+        {
+          "time": "2:00 PM",
+          "room": "TCHL168"
+        }
+      ]
+    }
+  },
+  {
+    "course": "CS343",
+    "sessions": {
+      "M": [
+        {
+          "time": "12:00 PM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "1:00 PM",
+          "room": "Mudd 3532"
+        }
+      ],
+      "Tu": [
+        {
+          "time": "2:00 PM",
+          "room": "ANNG01"
+        },
+        {
+          "time": "3:00 PM",
+          "room": "ANNG01"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "Mudd 3108"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "Mudd 3108"
+        }
+      ],
+      "W": [
+        {
+          "time": "11:00 AM",
+          "room": "Mudd 3108"
+        },
+        {
+          "time": "12:00 PM",
+          "room": "Mudd 3108"
+        },
+        {
+          "time": "1:00 PM",
+          "room": "Mudd 3108"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "TCHM177"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "TCHM177"
+        }
+      ],
+      "Th": [
+        {
+          "time": "2:00 PM",
+          "room": "FSL2370"
+        },
+        {
+          "time": "3:00 PM",
+          "room": "FSL2370"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "Mudd 3 floor front counter"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "Mudd 3 floor front counter"
+        }
+      ],
+      "F": [
+        {
+          "time": "10:00 AM",
+          "room": "Mudd 3108"
+        },
+        {
+          "time": "11:00 AM",
+          "room": "Mudd 3108"
+        },
+        {
+          "time": "12:00 PM",
+          "room": "First floor lobby of Mudd"
+        },
+        {
+          "time": "1:00 PM",
+          "room": "First floor lobby of Mudd"
+        },
+        {
+          "time": "2:00 PM",
+          "room": "First floor lobby of Mudd"
+        },
+        {
+          "time": "3:00 PM",
+          "room": "First floor lobby of Mudd"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "First floor lobby of Mudd"
+        },
+        {
+          "time": "9:00 AM",
+          "room": "Mudd 3108"
+        }
+      ]
+    }
+  },
+  {
+    "course": "CS349",
+    "sessions": {
+      "M": [
+        {
+          "time": "10:00 AM",
+          "room": "Mudd 3108"
+        },
+        {
+          "time": "12:00 PM",
+          "room": "TCHL168"
+        }
+      ],
+      "Th": [
+        {
+          "time": "1:00 PM",
+          "room": "ANNG32"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "TCHM349"
+        }
+      ],
+      "F": [
+        {
+          "time": "12:00 PM",
+          "room": "TCHL170"
+        },
+        {
+          "time": "2:00 PM",
+          "room": "TCHL158"
+        }
+      ]
+    }
+  },
+  {
+    "course": "CS213",
+    "sessions": {
+      "M": [
+        {
+          "time": "11:00 AM",
+          "room": "ANNG32"
+        },
+        {
+          "time": "12:00 PM",
+          "room": "ANNG32"
+        },
+        {
+          "time": "1:00 PM",
+          "room": "ANNG32"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "ANNG01"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "ANNG01"
+        }
+      ],
+      "Tu": [
+        {
+          "time": "11:00 AM",
+          "room": "TCHL168"
+        },
+        {
+          "time": "12:00 PM",
+          "room": "TCHL168"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "TCHL221"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "TCHL221"
+        }
+      ],
+      "W": [
+        {
+          "time": "5:00 PM",
+          "room": "TCHM152"
+        }
+      ],
+      "Th": [
+        {
+          "time": "4:00 PM",
+          "room": "ANNG15"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "TCHM177"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "ANNG15"
+        }
+      ],
+      "F": [
+        {
+          "time": "12:00 PM",
+          "room": "TCHA110"
+        },
+        {
+          "time": "1:00 PM",
+          "room": "TCHA110"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "TCHL160"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "TCHL160"
+        }
+      ]
+    }
+  },
+  {
+    "course": "CS371",
+    "sessions": {
+      "M": [
+        {
+          "time": "2:00 PM",
+          "room": "TCHL221"
+        }
+      ],
+      "Tu": [
+        {
+          "time": "2:00 PM",
+          "room": "TCHL221"
+        }
+      ],
+      "W": [
+        {
+          "time": "2:00 PM",
+          "room": "First floor lobby of Mudd"
+        }
+      ],
+      "Th": [
+        {
+          "time": "2:00 PM",
+          "room": "TCHM349"
+        }
+      ],
+      "F": [
+        {
+          "time": "1:00 PM",
+          "room": "Mudd 3 floor front counter"
+        },
+        {
+          "time": "2:00 PM",
+          "room": "Mudd 3 floor front counter"
+        }
+      ]
+    }
+  },
+  {
+    "course": "CS374",
+    "sessions": {
+      "W": [
+        {
+          "time": "12:00 PM",
+          "room": "TCHM177"
+        }
+      ],
+      "F": [
+        {
+          "time": "1:00 PM",
+          "room": "TCHM120"
+        }
+      ]
+    }
+  },
+  {
+    "course": "CS348",
+    "sessions": {
+      "M": [
+        {
+          "time": "10:00 AM",
+          "room": "Mudd 3 floor front counter"
+        },
+        {
+          "time": "1:00 PM",
+          "room": "Mudd 3 floor front counter"
+        },
+        {
+          "time": "2:00 PM",
+          "room": "Mudd 3 floor front counter"
+        },
+        {
+          "time": "9:00 AM",
+          "room": "Mudd 3 floor front counter"
+        }
+      ],
+      "Tu": [
+        {
+          "time": "2:00 PM",
+          "room": "Mudd 3532"
+        }
+      ],
+      "W": [
+        {
+          "time": "10:00 AM",
+          "room": "First floor lobby of Mudd"
+        },
+        {
+          "time": "9:00 AM",
+          "room": "First floor lobby of Mudd"
+        }
+      ],
+      "Th": [
+        {
+          "time": "2:00 PM",
+          "room": "Mudd 3 floor front counter"
+        },
+        {
+          "time": "3:00 PM",
+          "room": "Mudd 3 floor front counter"
+        }
+      ],
+      "F": [
+        {
+          "time": "12:00 PM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "1:00 PM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "3:00 PM",
+          "room": "Mudd 3 floor front counter"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "Mudd 3 floor front counter"
+        }
+      ]
+    }
+  },
+  {
+    "course": "CS212",
+    "sessions": {
+      "M": [
+        {
+          "time": "4:00 PM",
+          "room": "Mudd 3108"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "Mudd 3108"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "Mudd 3108"
+        }
+      ],
+      "Tu": [
+        {
+          "time": "12:00 PM",
+          "room": "TCHLG62"
+        },
+        {
+          "time": "2:00 PM",
+          "room": "Mudd 3108"
+        },
+        {
+          "time": "3:00 PM",
+          "room": "Mudd 3108"
+        }
+      ],
+      "W": [
+        {
+          "time": "1:00 PM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "2:00 PM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "3:00 PM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "Mudd 3108"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "Mudd 3108"
+        }
+      ],
+      "Th": [
+        {
+          "time": "12:00 PM",
+          "room": "TCHLG62"
+        },
+        {
+          "time": "3:00 PM",
+          "room": "Mudd 3108"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "Mudd 3108"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "TCHF280"
+        },
+        {
+          "time": "7:00 PM",
+          "room": "TCHF280"
+        }
+      ],
+      "F": [
+        {
+          "time": "3:00 PM",
+          "room": "TCHL170"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "TCHM120"
+        }
+      ]
+    }
+  },
+  {
+    "course": "CS354",
+    "sessions": {
+      "M": [
+        {
+          "time": "5:00 PM",
+          "room": "Mudd 3 floor front counter"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "Mudd 3 floor front counter"
+        },
+        {
+          "time": "7:00 PM",
+          "room": "Mudd 3 floor front counter"
+        }
+      ],
+      "Tu": [
+        {
+          "time": "1:00 PM",
+          "room": "First floor lobby of Mudd"
+        },
+        {
+          "time": "2:00 PM",
+          "room": "First floor lobby of Mudd"
+        },
+        {
+          "time": "3:00 PM",
+          "room": "First floor lobby of Mudd"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "First floor lobby of Mudd"
+        }
+      ],
+      "W": [
+        {
+          "time": "11:00 AM",
+          "room": "First floor lobby of Mudd"
+        },
+        {
+          "time": "12:00 PM",
+          "room": "First floor lobby of Mudd"
+        },
+        {
+          "time": "1:00 PM",
+          "room": "First floor lobby of Mudd"
+        }
+      ],
+      "Th": [
+        {
+          "time": "1:00 PM",
+          "room": "Mudd 3108"
+        },
+        {
+          "time": "2:00 PM",
+          "room": "Mudd 3108"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "Mudd 3108"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "Mudd 3108"
+        }
+      ],
+      "F": [
+        {
+          "time": "1:00 PM",
+          "room": "Mudd 3108"
+        },
+        {
+          "time": "2:00 PM",
+          "room": "Mudd 3108"
+        },
+        {
+          "time": "3:00 PM",
+          "room": "Mudd 3108"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "Mudd 3108"
+        }
+      ]
+    }
+  },
+  {
+    "course": "CS351",
+    "sessions": {
+      "M": [
+        {
+          "time": "11:00 AM",
+          "room": "TCHLG72"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "ANNG30"
+        }
+      ],
+      "Tu": [
+        {
+          "time": "1:00 PM",
+          "room": "Mudd 3 floor front counter"
+        },
+        {
+          "time": "2:00 PM",
+          "room": "ANNG31"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "TCHM152"
+        }
+      ],
+      "W": [
+        {
+          "time": "11:00 AM",
+          "room": "LIB4670"
+        },
+        {
+          "time": "12:00 PM",
+          "room": "TCHLG72"
+        },
+        {
+          "time": "2:00 PM",
+          "room": "LIB4770"
+        },
+        {
+          "time": "3:00 PM",
+          "room": "ELDER30"
+        }
+      ],
+      "Th": [
+        {
+          "time": "5:00 PM",
+          "room": "UNV318"
+        }
+      ]
+    }
+  },
+  {
+    "course": "CS461",
+    "sessions": {
+      "M": [
+        {
+          "time": "1:00 PM",
+          "room": "ANNG01"
+        },
+        {
+          "time": "2:00 PM",
+          "room": "ANNG31"
+        }
+      ],
+      "Tu": [
+        {
+          "time": "10:00 AM",
+          "room": "Mudd 3108"
+        },
+        {
+          "time": "9:00 AM",
+          "room": "Mudd 3108"
+        }
+      ]
+    }
+  },
+  {
+    "course": "CS321",
+    "sessions": {
+      "M": [
+        {
+          "time": "2:00 PM",
+          "room": "FSL2107"
+        },
+        {
+          "time": "3:00 PM",
+          "room": "FSL2107"
+        }
+      ],
+      "Tu": [
+        {
+          "time": "2:00 PM",
+          "room": "LIB3670"
+        },
+        {
+          "time": "2:00 PM",
+          "room": "LIB5322"
+        },
+        {
+          "time": "3:00 PM",
+          "room": "LIB3670"
+        },
+        {
+          "time": "3:00 PM",
+          "room": "TCHM166"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "TCHL160"
+        }
+      ],
+      "W": [
+        {
+          "time": "1:00 PM",
+          "room": "Mudd 3 floor front counter"
+        },
+        {
+          "time": "2:00 PM",
+          "room": "TCHA110"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "TCHLR2"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "TCHL221"
+        }
+      ],
+      "Th": [
+        {
+          "time": "2:00 PM",
+          "room": "ANNG01"
+        }
+      ]
+    }
+  },
+  {
+    "course": "CS336",
+    "sessions": {
+      "M": [
+        {
+          "time": "3:00 PM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "TCHF280"
+        }
+      ],
+      "Tu": [
+        {
+          "time": "6:00 PM",
+          "room": "TCHLG66"
+        }
+      ],
+      "W": [
+        {
+          "time": "11:00 AM",
+          "room": "LIB5746"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "LIB3370"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "TCHLG52"
+        }
+      ],
+      "Th": [
+        {
+          "time": "2:00 PM",
+          "room": "FSL1441"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "UNV101"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "UNV118"
+        }
+      ],
+      "F": [
+        {
+          "time": "2:00 PM",
+          "room": "FSL2370"
+        }
+      ]
+    }
+  },
+  {
+    "course": "CS449",
+    "sessions": {
+      "M": [
+        {
+          "time": "3:00 PM",
+          "room": "Mudd 3 floor front counter"
+        },
+        {
+          "time": "4:00 PM",
+          "room": "Mudd 3 floor front counter"
+        }
+      ],
+      "W": [
+        {
+          "time": "2:00 PM",
+          "room": "Mudd 3 floor front counter"
+        },
+        {
+          "time": "3:00 PM",
+          "room": "Mudd 3 floor front counter"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "Mudd 3 floor front counter"
+        },
+        {
+          "time": "6:00 PM",
+          "room": "Mudd 3 floor front counter"
+        }
+      ]
+    }
+  },
+  {
+    "course": "CS150",
+    "sessions": {
+      "M": [
+        {
+          "time": "4:00 PM",
+          "room": "TCHL160"
+        }
+      ],
+      "Tu": [
+        {
+          "time": "4:00 PM",
+          "room": "FSL3220"
+        }
+      ]
+    }
+  },
+  {
+    "course": "CS397",
+    "sessions": {
+      "M": [
+        {
+          "time": "4:00 PM",
+          "room": "Mudd 3532"
+        }
+      ],
+      "W": [
+        {
+          "time": "4:00 PM",
+          "room": "Mudd 3532"
+        }
+      ]
+    }
+  },
+  {
+    "course": "CS496",
+    "sessions": {
+      "Tu": [
+        {
+          "time": "3:00 PM",
+          "room": "TCHLG72"
+        }
+      ],
+      "W": [
+        {
+          "time": "1:00 PM",
+          "room": "TCHLG72"
+        }
+      ],
+      "Th": [
+        {
+          "time": "11:00 AM",
+          "room": "ANNG29"
+        }
+      ]
+    }
+  },
+  {
+    "course": "CS326",
+    "sessions": {
+      "Tu": [
+        {
+          "time": "12:00 PM",
+          "room": "Mudd 3532"
+        },
+        {
+          "time": "1:00 PM",
+          "room": "Mudd 3532"
+        }
+      ],
+      "Th": [
+        {
+          "time": "2:00 PM",
+          "room": "Mudd 3532"
+        }
+      ]
+    }
+  },
+  {
+    "course": "CS398",
+    "sessions": {
+      "Th": [
+        {
+          "time": "2:00 PM",
+          "room": "ANNG28"
+        }
+      ]
+    }
+  },
+  {
+    "course": "CS437",
+    "sessions": {
+      "Tu": [
+        {
+          "time": "4:00 PM",
+          "room": "TCHM349"
+        },
+        {
+          "time": "5:00 PM",
+          "room": "TCHL361"
+        }
+      ]
+    }
+  }
+]

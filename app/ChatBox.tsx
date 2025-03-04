@@ -33,22 +33,21 @@ const ChatBox: React.FC = () => {
 
   // Initialize speech recognition
   useEffect(() => {
-    if (typeof window !== 'undefined' && ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
-      // Create speech recognition instance
-      const SpeechRecognition = (window as any).webkitSpeechRecognition || (window as any).SpeechRecognition;
+    if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+      const SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
       const recognitionInstance = new SpeechRecognition();
-      
+
       recognitionInstance.continuous = false;
       recognitionInstance.interimResults = false;
       recognitionInstance.lang = 'en-US';
 
-      recognitionInstance.onresult = (event: any) => {
+      recognitionInstance.onresult = (event) => {
         const transcript = event.results[0][0].transcript;
-        setMessage(prev => prev + ' ' + transcript.trim());
+        setMessage((prev) => prev + ' ' + transcript.trim());
         setIsListening(false);
       };
 
-      recognitionInstance.onerror = (event: any) => {
+      recognitionInstance.onerror = (event) => {
         console.error('Speech recognition error:', event.error);
         setIsListening(false);
       };
@@ -62,6 +61,25 @@ const ChatBox: React.FC = () => {
       console.log('Speech recognition not supported in this browser');
     }
   }, []);
+
+  const toggleVoiceRecognition = async () => {
+    if (!recognition) {
+      console.log('Speech recognition not available');
+      return;
+    }
+
+    if (isListening) {
+      recognition.stop();
+      setIsListening(false);
+    } else {
+      try {
+        await recognition.start();
+        setIsListening(true);
+      } catch (error) {
+        console.error('Error starting speech recognition:', error);
+      }
+    }
+  };
 
   // Create a new thread
   const createThread = async () => {
@@ -102,26 +120,6 @@ const ChatBox: React.FC = () => {
           sender: 'bot',
         },
       ]);
-    }
-  };
-
-  // Toggle voice recognition
-  const toggleVoiceRecognition = async () => {
-    if (!recognition) {
-      console.log('Speech recognition not available');
-      return;
-    }
-
-    if (isListening) {
-      recognition.stop();
-      setIsListening(false);
-    } else {
-      try {
-        await recognition.start();
-        setIsListening(true);
-      } catch (error) {
-        console.error('Error starting speech recognition:', error);
-      }
     }
   };
 
