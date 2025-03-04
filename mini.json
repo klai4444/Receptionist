@@ -1,0 +1,158 @@
+[
+  {
+    "text": "CS 211 (OH (Zhang)) holds sessions on Friday at 6:00 PM in Mudd 3108- request swipe access - permissions@cs.northwestern.edu. The room can accommodate up to 10 students. These office hours are available from 1/10 - 3/21.",
+    "metadata": {
+      "course": "CS 211",
+      "description": "OH (Zhang)",
+      "day": "F",
+      "formattedDay": "Friday",
+      "time": "6:00 PM",
+      "room": "Mudd 3108- request swipe access - permissions@cs.northwestern.edu",
+      "capacity": "10",
+      "availability": "1/10 - 3/21"
+    }
+  },
+  {
+    "text": "CS 211 (OH (Zhang)) holds sessions on Friday at 9:00 AM in First floor lobby of Mudd. The room can accommodate up to 10 students. These office hours are available from 1/10 - 3/21.",
+    "metadata": {
+      "course": "CS 211",
+      "description": "OH (Zhang)",
+      "day": "F",
+      "formattedDay": "Friday",
+      "time": "9:00 AM",
+      "room": "First floor lobby of Mudd",
+      "capacity": "10",
+      "availability": "1/10 - 3/21"
+    }
+  },
+  {
+    "text": "CS 214 (office hours) holds sessions on Friday at 3:00 PM in Mudd 3532. The room can accommodate up to 8 students. These office hours are available from 1/10 - 3/21.",
+    "metadata": {
+      "course": "CS 214",
+      "description": "office hours",
+      "day": "F",
+      "formattedDay": "Friday",
+      "time": "3:00 PM",
+      "room": "Mudd 3532",
+      "capacity": "8",
+      "availability": "1/10 - 3/21"
+    }
+  },
+  {
+    "text": "CS 214 (office hours) holds sessions on Friday at 4:00 PM in Mudd 3532. The room can accommodate up to 8 students. These office hours are available from 1/10 - 3/21.",
+    "metadata": {
+      "course": "CS 214",
+      "description": "office hours",
+      "day": "F",
+      "formattedDay": "Friday",
+      "time": "4:00 PM",
+      "room": "Mudd 3532",
+      "capacity": "8",
+      "availability": "1/10 - 3/21"
+    }
+  },
+  {
+    "text": "CS 211 (OH (Zhang)) holds sessions on Friday at 10:00 AM in First floor lobby of Mudd. The room can accommodate up to 10 students. These office hours are available from 1/10 - 3/21.",
+    "metadata": {
+      "course": "CS 211",
+      "description": "OH (Zhang)",
+      "day": "F",
+      "formattedDay": "Friday",
+      "time": "10:00 AM",
+      "room": "First floor lobby of Mudd",
+      "capacity": "10",
+      "availability": "1/10 - 3/21"
+    }
+  },
+  {
+    "text": "CS 310 (office hours) holds sessions on Friday at 9:00 AM in Mudd 3532. The room can accommodate up to 8 students. These office hours are available from 1/10 - 3/21.",
+    "metadata": {
+      "course": "CS 310",
+      "description": "office hours",
+      "day": "F",
+      "formattedDay": "Friday",
+      "time": "9:00 AM",
+      "room": "Mudd 3532",
+      "capacity": "8",
+      "availability": "1/10 - 3/21"
+    }
+  },
+  {
+    "text": "CS111 (Natalie's OH ) holds sessions on Friday at 10:00 AM in ANNG32. The room can accommodate up to 30 students. These office hours are available from 1/10 - 3/14.",
+    "metadata": {
+      "course": "CS111",
+      "description": "Natalie's OH ",
+      "day": "F",
+      "formattedDay": "Friday",
+      "time": "10:00 AM",
+      "room": "ANNG32",
+      "capacity": "30",
+      "availability": "1/10 - 3/14"
+    }
+  },
+  {
+    "text": "CS 310 (office hours) holds sessions on Friday at 10:00 AM in Mudd 3532. The room can accommodate up to 8 students. These office hours are available from 1/10 - 3/21.",
+    "metadata": {
+      "course": "CS 310",
+      "description": "office hours",
+      "day": "F",
+      "formattedDay": "Friday",
+      "time": "10:00 AM",
+      "room": "Mudd 3532",
+      "capacity": "8",
+      "availability": "1/10 - 3/21"
+    }
+  },
+  {
+    "text": "CS 211 (OH (Zhang)) holds sessions on Friday at 11:00 AM in First floor lobby of Mudd. The room can accommodate up to 10 students. These office hours are available from 1/10 - 3/21.",
+    "metadata": {
+      "course": "CS 211",
+      "description": "OH (Zhang)",
+      "day": "F",
+      "formattedDay": "Friday",
+      "time": "11:00 AM",
+      "room": "First floor lobby of Mudd",
+      "capacity": "10",
+      "availability": "1/10 - 3/21"
+    }
+  },
+  {
+    "text": "CS 310 (office hours) holds sessions on Friday at 11:00 AM in Mudd 3532. The room can accommodate up to 8 students. These office hours are available from 1/10 - 3/21.",
+    "metadata": {
+      "course": "CS 310",
+      "description": "office hours",
+      "day": "F",
+      "formattedDay": "Friday",
+      "time": "11:00 AM",
+      "room": "Mudd 3532",
+      "capacity": "8",
+      "availability": "1/10 - 3/21"
+    }
+  },
+  {
+    "text": "CS 340 (Franklin Zhao <franklinzhao2026@u.northwestern.edu>) holds sessions on Friday at 11:00 AM in TCHM166. The room can accommodate up to 21 students. These office hours are available from 1/10 - 3/14.",
+    "metadata": {
+      "course": "CS 340",
+      "description": "Franklin Zhao <franklinzhao2026@u.northwestern.edu>",
+      "day": "F",
+      "formattedDay": "Friday",
+      "time": "11:00 AM",
+      "room": "TCHM166",
+      "capacity": "21",
+      "availability": "1/10 - 3/14"
+    }
+  },
+  {
+    "text": "CS 110 (Office Hours) holds sessions on Friday at 11:00 AM in TCHM152. The room can accommodate up to 56 students. These office hours are available from 1/10 - 3/14.",
+    "metadata": {
+      "course": "CS 110",
+      "description": "Office Hours",
+      "day": "F",
+      "formattedDay": "Friday",
+      "time": "11:00 AM",
+      "room": "TCHM152",
+      "capacity": "56",
+      "availability": "1/10 - 3/14"
+    }
+  }
+]
