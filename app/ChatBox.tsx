@@ -307,13 +307,16 @@ const ChatBox: React.FC = () => {
          
           if (assistantMessages.length > 0) {
             const latestMessage = assistantMessages[0];
-            let messageContent = latestMessage.content[0].text.value;
+            // let messageContent = latestMessage.content[0].text.value;
+            let messageContent = String(latestMessage.content[0].text.value || '');
+            const pattern = /【\d+[:\d]*†source】/g;// Note: This is the JS/TS regex syntax.
+            let cleanedMessage  = messageContent.replace(pattern, '');
             
             setMessages(prev => [
               ...prev,
               {
                 id: Date.now(),
-                text: messageContent,
+                text: cleanedMessage,
                 sender: 'bot',
               },
             ]);
