@@ -3,7 +3,7 @@ import { View, Text, TextInput, ScrollView, TouchableOpacity, StyleSheet } from 
 import axios from 'axios';
 import { CONFIG } from '../config'; // Adjust path as needed
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faMicrophoneLines, faMicrophoneLinesSlash } from '@fortawesome/free-solid-svg-icons';
+import { faMicrophoneLines, faMicrophoneLinesSlash, faVolumeHigh, faVolumeMute } from '@fortawesome/free-solid-svg-icons';
 
 const API_KEY = CONFIG.OPENAI_API_KEY;
 const ASSISTANT_ID = "asst_jNXRblRWrlyLWQc8Jgf1MsmX";
@@ -12,6 +12,7 @@ interface Message {
   id: number;
   text: string;
   sender: 'user' | 'bot';
+  audioUrl?: string;
 }
 
 const ChatBox: React.FC = () => {
@@ -25,11 +26,26 @@ const ChatBox: React.FC = () => {
   const scrollViewRef = useRef<ScrollView>(null);
   const [isListening, setIsListening] = useState(false);
   const [recognition, setRecognition] = useState<any | null>(null);
+  const [isSpeakerOn, setIsSpeakerOn] = useState(true);
+  const [currentAudio, setCurrentAudio] = useState<HTMLAudioElement | null>(null);
 
   // Create a thread when the component mounts
   useEffect(() => {
     createThread();
+    
+    // Convert the initial bot message to speech
+    generateSpeech(messages[0].text);
   }, []);
+
+  // Clean up audio elements when unmounting
+  useEffect(() => {
+    return () => {
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.src = '';
+      }
+    };
+  }, [currentAudio]);
 
   // Initialize speech recognition
   useEffect(() => {
@@ -62,6 +78,74 @@ const ChatBox: React.FC = () => {
     }
   }, []);
 
+  // Function to generate speech from text
+  const generateSpeech = async (text: string) => {
+    if (!isSpeakerOn) return;
+    
+    try {
+      const response = await axios.post(
+        'https://api.openai.com/v1/audio/speech',
+        {
+          model: "tts-1",
+          voice: "nova", // You can choose any voice: alloy, echo, fable, onyx, nova, shimmer
+          input: text,
+        },
+        {
+          headers: {
+            'Authorization': `Bearer ${API_KEY}`,
+            'Content-Type': 'application/json',
+          },
+          responseType: 'arraybuffer', // Important for binary data
+        }
+      );
+      
+      // Convert the binary data to a Blob
+      const audioBlob = new Blob([response.data], { type: 'audio/mpeg' });
+      const audioUrl = URL.createObjectURL(audioBlob);
+      
+      // Update the message with the audio URL
+      setMessages(prev => 
+        prev.map(msg => 
+          msg.id === prev[prev.length - 1].id && msg.sender === 'bot' 
+            ? { ...msg, audioUrl } 
+            : msg
+        )
+      );
+      
+      // Play the audio
+      if (currentAudio) {
+        currentAudio.pause();
+      }
+      
+      const audio = new Audio(audioUrl);
+      setCurrentAudio(audio);
+      audio.play();
+      
+      return audioUrl;
+    } catch (error) {
+      console.error('Error generating speech:', error);
+      return null;
+    }
+  };
+
+  // Function to play audio for a specific message
+  const playMessageAudio = (message: Message) => {
+    if (!isSpeakerOn) return;
+    
+    if (message.audioUrl) {
+      // If the message already has audio, play it
+      if (currentAudio) {
+        currentAudio.pause();
+      }
+      const audio = new Audio(message.audioUrl);
+      setCurrentAudio(audio);
+      audio.play();
+    } else if (message.sender === 'bot') {
+      // If it's a bot message without audio, generate it
+      generateSpeech(message.text);
+    }
+  };
+
   const toggleVoiceRecognition = async () => {
     if (!recognition) {
       console.log('Speech recognition not available');
@@ -78,6 +162,13 @@ const ChatBox: React.FC = () => {
       } catch (error) {
         console.error('Error starting speech recognition:', error);
       }
+    }
+  };
+
+  const toggleSpeaker = () => {
+    setIsSpeakerOn(!isSpeakerOn);
+    if (currentAudio && isSpeakerOn) {
+      currentAudio.pause();
     }
   };
 
@@ -310,25 +401,40 @@ const ChatBox: React.FC = () => {
             // let messageContent = latestMessage.content[0].text.value;
             let messageContent = String(latestMessage.content[0].text.value || '');
             const pattern = /【\d+[:\d]*†source】/g;// Note: This is the JS/TS regex syntax.
-            let cleanedMessage  = messageContent.replace(pattern, '');
+            let cleanedMessage = messageContent.replace(pattern, '');
             
-            setMessages(prev => [
-              ...prev,
-              {
-                id: Date.now(),
-                text: cleanedMessage,
-                sender: 'bot',
-              },
-            ]);
+            // Generate speech for the bot's message and get the audio URL
+            let audioUrl = null;
+            if (isSpeakerOn) {
+              audioUrl = await generateSpeech(cleanedMessage);
+            }
+            
+            // Add the bot message with the audio URL if available
+            const botMessage: Message = {
+              id: Date.now(),
+              text: cleanedMessage,
+              sender: 'bot',
+              audioUrl: audioUrl || undefined
+            };
+            
+            setMessages(prev => [...prev, botMessage]);
           } else {
-            setMessages(prev => [
-              ...prev,
-              {
-                id: Date.now(),
-                text: "I didn't receive a response. Please try again.",
-                sender: 'bot',
-              },
-            ]);
+            const errorMessage = "I didn't receive a response. Please try again.";
+            
+            // Generate speech for the error message and get the audio URL
+            let audioUrl = null;
+            if (isSpeakerOn) {
+              audioUrl = await generateSpeech(errorMessage);
+            }
+            
+            const errorBotMessage: Message = {
+              id: Date.now(),
+              text: errorMessage,
+              sender: 'bot',
+              audioUrl: audioUrl || undefined
+            };
+            
+            setMessages(prev => [...prev, errorBotMessage]);
           }
          
           break;
@@ -341,43 +447,65 @@ const ChatBox: React.FC = () => {
           } else {
             errorMessage += "Please try again.";
           }
-         
-          setMessages(prev => [
-            ...prev,
-            {
-              id: Date.now(),
-              text: errorMessage,
-              sender: 'bot',
-            },
-          ]);
+          
+          // Generate speech for the error message and get the audio URL
+          let audioUrl = null;
+          if (isSpeakerOn) {
+            audioUrl = await generateSpeech(errorMessage);
+          }
+          
+          const errorBotMessage: Message = {
+            id: Date.now(),
+            text: errorMessage,
+            sender: 'bot',
+            audioUrl: audioUrl || undefined
+          };
+          
+          setMessages(prev => [...prev, errorBotMessage]);
          
           break;
         }
       } catch (error) {
         console.error('Error polling run status:', error);
-       
-        setMessages(prev => [
-          ...prev,
-          {
-            id: Date.now(),
-            text: "I'm having trouble retrieving the response. Please try again.",
-            sender: 'bot',
-          },
-        ]);
+        
+        const errorMessage = "I'm having trouble retrieving the response. Please try again.";
+        
+        // Generate speech for the error message and get the audio URL
+        let audioUrl = null;
+        if (isSpeakerOn) {
+          audioUrl = await generateSpeech(errorMessage);
+        }
+        
+        const errorBotMessage: Message = {
+          id: Date.now(),
+          text: errorMessage,
+          sender: 'bot',
+          audioUrl: audioUrl || undefined
+        };
+        
+        setMessages(prev => [...prev, errorBotMessage]);
        
         break;
       }
     }
    
     if (attempts >= maxAttempts) {
-      setMessages(prev => [
-        ...prev,
-        {
-          id: Date.now(),
-          text: "The response is taking longer than expected. Please try again later.",
-          sender: 'bot',
-        },
-      ]);
+      const timeoutMessage = "The response is taking longer than expected. Please try again later.";
+      
+      // Generate speech for the timeout message and get the audio URL
+      let audioUrl = null;
+      if (isSpeakerOn) {
+        audioUrl = await generateSpeech(timeoutMessage);
+      }
+      
+      const timeoutBotMessage: Message = {
+        id: Date.now(),
+        text: timeoutMessage,
+        sender: 'bot',
+        audioUrl: audioUrl || undefined
+      };
+      
+      setMessages(prev => [...prev, timeoutBotMessage]);
     }
    
     setIsLoading(false);
@@ -444,6 +572,17 @@ const ChatBox: React.FC = () => {
           />
         </TouchableOpacity>
 
+        <TouchableOpacity 
+          style={[styles.speakerButton, !isSpeakerOn && styles.speakerButtonOff]} 
+          onPress={toggleSpeaker}
+        >
+          <FontAwesomeIcon 
+            icon={isSpeakerOn ? faVolumeHigh : faVolumeMute} 
+            color="#ffffff"
+            size={18}
+          />
+        </TouchableOpacity>
+
         <TextInput
           style={styles.input}
           value={message}
@@ -501,6 +640,7 @@ const styles = StyleSheet.create({
     padding: 12,
     borderRadius: 20,
     marginVertical: 6,
+    position: 'relative',
   },
   userMessage: {
     backgroundColor: '#2563eb',
@@ -526,6 +666,7 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     fontFamily: 'RobotoSlab-Regular',
   },
+
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -565,7 +706,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#2563eb',
     padding: 10,
     borderRadius: 20,
-    marginRight: 12,
+    marginRight: 8,
     width: 40,
     height: 40,
     justifyContent: 'center',
@@ -573,6 +714,19 @@ const styles = StyleSheet.create({
   },
   voiceButtonActive: {
     backgroundColor: '#dc2626',
+  },
+  speakerButton: {
+    backgroundColor: '#2563eb',
+    padding: 10,
+    borderRadius: 20,
+    marginRight: 12,
+    width: 40,
+    height: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  speakerButtonOff: {
+    backgroundColor: '#9ca3af',
   },
 });
 

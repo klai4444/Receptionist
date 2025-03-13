@@ -49,4 +49,10 @@ declare interface Window {
     stop(): void;
   }
 
+  declare module '*.jpg' {
+    const value: string;
+    export default value;
+  }
+
+  
 export default {} as typeof globalThis;
