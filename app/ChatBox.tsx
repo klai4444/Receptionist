@@ -95,7 +95,7 @@ const ChatBox: React.FC = () => {
             'Authorization': `Bearer ${API_KEY}`,
             'Content-Type': 'application/json',
           },
-          responseType: 'arraybuffer', // Important for binary data
+          responseType: 'arraybuffer', 
         }
       );
       
@@ -133,7 +133,7 @@ const ChatBox: React.FC = () => {
     if (!isSpeakerOn) return;
     
     if (message.audioUrl) {
-      // If the message already has audio, play it
+      // If the message already has audio, just play it
       if (currentAudio) {
         currentAudio.pause();
       }
