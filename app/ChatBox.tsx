@@ -87,7 +87,7 @@ const ChatBox: React.FC = () => {
         'https://api.openai.com/v1/audio/speech',
         {
           model: "tts-1",
-          voice: "nova", // You can choose any voice: alloy, echo, fable, onyx, nova, shimmer
+          voice: "nova",
           input: text,
         },
         {
