@@ -161,8 +161,8 @@ const styles = StyleSheet.create<Styles>({
     paddingVertical: 10,
     paddingHorizontal: 15,
     borderRadius: 5,
-    elevation: 5, // Shadow effect on Android
-    zIndex: 10, // Ensures it appears above other elements
+    elevation: 5,
+    zIndex: 10,
   },
   calendarButton: {
     position: 'absolute',
@@ -172,8 +172,8 @@ const styles = StyleSheet.create<Styles>({
     paddingVertical: 10,
     paddingHorizontal: 15,
     borderRadius: 5,
-    elevation: 5, // Shadow effect on Android
-    zIndex: 10, // Ensures it appears above other elements
+    elevation: 5,
+    zIndex: 10,
   },
   buttonText: {
     fontSize: 24,
@@ -181,18 +181,18 @@ const styles = StyleSheet.create<Styles>({
     fontWeight: 'bold',
   },
   mapIcon: {
-    width: 40, // Adjust size as needed
+    width: 40, 
     height: 40,
     resizeMode: 'contain',
   },
   calendarIcon: {
-    width: 40, // Adjust size as needed
+    width: 40, 
     height: 40,
     resizeMode: 'contain',
   },
   modalBackground: {
     flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent background
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', 
     justifyContent: 'center',
     alignItems: 'center',
   },
